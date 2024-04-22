@@ -3,7 +3,7 @@ SHELL=/bin/bash
 
 PYTHON_VENV ?= python
 VENVNAME ?= tut
-DIST_VERSION ?= 7
+DIST_VERSION ?= 8
 CONFDIR=${DESTDIR}/etc/leapp
 LIBDIR=${DESTDIR}/var/lib/leapp
 
@@ -145,7 +145,7 @@ build: source
 		--define "_buildrootdir `pwd`/packaging/BUILDROOT" \
 		--define "_rpmdir `pwd`/packaging/RPMS" \
 		--define "rhel $(DIST_VERSION)" \
-		--define 'dist .el$(DIST_VERSION)' \
+		--define 'dist .oc$(DIST_VERSION)' \
 		--define 'el$(DIST_VERSION) 1' || FAILED=1
 	@mv packaging/$(PKGNAME).spec.bak packaging/$(PKGNAME).spec
 
